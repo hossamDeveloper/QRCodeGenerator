@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+
+
+</head>
+
+<body class="bg-gradient-to-tl from-[#1d59f9] to-[#220e27] h-[120vh] lg:h-screen flex items-center justify-center ">
+
+    <div class="w-full lg:w-3/4 h-full lg:h-3/4   bg-white  border-8 border-gray-200 rounded-md flex flex-col-reverse lg:flex-row">
+        <div class="p-5 w-full lg:w-2/3">
+            <div>
+                <div class="flex items-center gap-2">
+                    <h3 class="bg-[#220e27] text-white w-5 h-8 rounded-sm flex items-center justify-center">1</h3>
+                    <h2 class="text-2xl font-bold ">Complete the content</h2>
+                </div>
+                <div class="my-6">
+                    <label for="message" class="block mb-2 text-sm font-medium text-gray-900 ">message</label>
+                    <textarea name="message" id="message" rows="4"
+                        class="block p-2.5 w-full text-sm text-gray-950 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "></textarea>
+                </div>
+            </div>
+            <div>
+                <div class="flex items-center gap-2">
+                    <h3 class="bg-[#220e27] text-white w-5 h-8 rounded-sm flex items-center justify-center">2</h3>
+                    <h2 class="text-2xl font-bold ">Design your QR</h2>
+                </div>
+                <div>
+                    <div class="my-6">
+                        <label for="textScanMe" class="block mb-2 text-sm font-medium text-gray-900 ">Text</label>
+                        <input type="text" name="textScanMe" id="textScanMe" value="scan me!"
+                            class="block p-1.5 w-full text-sm text-gray-950 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 ">
+                        <h2 id="errorText"
+                            class="text-lg text-center hidden bg-red-400 text-red-600 border border-gray-800"></h2>
+
+                    </div>
+                    <div class="flex gap-2 my-6">
+                        <div>
+                            <label for="textColor" class="block mb-2 text-sm font-medium text-gray-900 ">Text
+                                Color</label>
+                            <div class="flex gap-2 bg-gray-50 px-2 rounded-lg w-36 border border-gray-300">
+                                <input type="text" name="textColor" id="textColor"
+                                    class="focus:bg-none focus:outline-none bg-gray-50 w-24" placeholder="#111111"
+                                    value="#111111">
+                                <input type="color" name="textColor" id="textColorPicker"
+                                    class="bg-transparent p-0 w-6 h-7 " value="#111111">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="bgColor" class="block mb-2 text-sm font-medium text-gray-900 ">Background
+                                Color</label>
+                            <div class="flex gap-2 bg-gray-50 px-2 rounded-lg w-36 border border-gray-300">
+
+                                <input type="text" name="bgColor" id="bgColorText"
+                                    class="focus:bg-none focus:outline-none bg-gray-50 w-24" placeholder="#ffffff"
+                                    value="#ffffff">
+                                <input type="color" name="bgColor" id="bgColorPicker" class="bg-transparent p-0 w-6 h-7"
+                                    value="#ffffff">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="w-full h-full lg:w-1/3 flex items-center justify-center">
+            <div class=" flex flex-col gap-2">
+                <div class="border border-gray-800 p-5" id="Allqrcode">
+                    <img id="qrcodeImage" src="QRCode.jpg" class="w-full h-[200px] object-contain border-4 border-gray-800" alt="">
+                    <h2 id="textCode" class="text-lg text-center  border-4 border-gray-800">scan me!</h2>
+                </div>
+                <a id="downloadQRCode"  class="bg-[#1d59f9] hover:bg-[#2c64fc] duration-300 text-white w-3/4 mx-auto py-2 rounded-sm flex items-center justify-center cursor-pointer">Download</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
